@@ -1,0 +1,25 @@
+pkgbase = morphy-bin
+	pkgdesc = Morphy — an infinite canvas for your AI agents
+	pkgver = 0.1.15
+	pkgrel = 1
+	url = https://get.appmorphy.com/
+	arch = x86_64
+	license = custom
+	depends = gtk3
+	depends = libnotify
+	depends = nss
+	depends = libxss
+	depends = libxtst
+	depends = xdg-utils
+	depends = at-spi2-core
+	depends = util-linux-libs
+	depends = libsecret
+	depends = gcc-libs
+	depends = glibc
+	optdepends = libappindicator-gtk3: system tray integration
+	provides = morphy
+	conflicts = morphy
+	source = https://github.com/casperaap/morphy-releases-/releases/download/v0.1.15/Morphy-0.1.15-amd64.deb
+	sha256sums = sha256:b5759652cae324875ab3f8c4c005fa5bd60068c840b63a511de1df073b4a51f0
+
+pkgname = morphy-bin
