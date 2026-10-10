@@ -1,27 +1,26 @@
 # Morphy for Arch Linux
 
-Unofficial Arch Linux packaging for [Morphy](https://get.appmorphy.com/), an infinite canvas for working with AI agents.
+Unofficial Arch Linux packaging for [Morphy](https://appmorphy.com/), an infinite canvas for working with AI agents.
 
-This repository provides a PKGBUILD to install Morphy on Arch Linux and other compatible distributions.
+This repository provides a PKGBUILD for installing the official Morphy Linux binary package on Arch Linux.
 
-> **Disclaimer:** This is an unofficial community packaging project. It is not affiliated with, endorsed by, or maintained by the official Morphy developers.
+> **Disclaimer:** This is an unofficial community project. It is not affiliated with or endorsed by the Morphy developers.
 
 ## Features
 
 - Install Morphy using `makepkg`
-- Add a desktop application entry
-- Register the application icon
-- Launch Morphy using the `morphy` command
-- Keep packaging instructions separate from the upstream application
+- Add a desktop application entry and application icon
+- Launch Morphy from the application menu or using the `morphy` command
+- Package the upstream binary without modifying the application itself
 
 ## Requirements
 
 - Arch Linux or a compatible distribution
 - `base-devel`
 - `git`
-- Dependencies listed in `PKGBUILD`
+- Runtime dependencies listed in `PKGBUILD`
 
-Install the basic build tools:
+Install the build tools:
 
 ```bash
 sudo pacman -S --needed base-devel git
@@ -29,20 +28,20 @@ sudo pacman -S --needed base-devel git
 
 ## Installation
 
-Clone this repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/mirmakhamat/morphy-bin.git
 cd morphy-bin
 ```
 
-Build and install the package:
+Build and install:
 
 ```bash
 makepkg -si
 ```
 
-After installation, launch Morphy with:
+Launch Morphy:
 
 ```bash
 morphy
@@ -52,9 +51,9 @@ You can also launch it from your desktop application menu.
 
 ## Updating
 
-When a new Morphy release becomes available, the package version and source checksum must be updated in `PKGBUILD`.
+When a new upstream release becomes available, update `pkgver`, verify the source URL, and calculate the SHA-256 checksum of the new package.
 
-Then rebuild and install the updated package:
+Then rebuild and install:
 
 ```bash
 makepkg -si
@@ -62,26 +61,26 @@ makepkg -si
 
 ## Troubleshooting
 
-### Blurry application interface
+### Blurry interface on Wayland
 
-If the interface looks blurry under Wayland or fractional display scaling, try launching Morphy with a different rendering backend:
+Try launching Morphy with the Wayland backend:
 
 ```bash
 morphy --ozone-platform=wayland
 ```
 
-Or try XWayland:
+Alternatively, try XWayland with a device scale factor:
 
 ```bash
 morphy --ozone-platform=x11 --force-device-scale-factor=1.5
 ```
 
-The best option depends on your desktop environment and display scaling configuration.
+The result depends on your display scaling and desktop configuration.
 
 ## License
 
-The packaging files in this repository, including the PKGBUILD and original documentation, are licensed under the MIT License.
+The packaging files and original documentation in this repository are licensed under the MIT License.
 
-This license does not apply to the Morphy application, its binaries, trademarks, or other upstream assets. These remain subject to their respective owners' terms and licensing conditions.
+The MIT License does not apply to the Morphy application, its binaries, trademarks, or other upstream assets. Those remain subject to their respective owners' terms.
 
-This is an unofficial community packaging project and is not affiliated with the Morphy developers.
+See the upstream [Morphy website](https://appmorphy.com/) for information about the application.
